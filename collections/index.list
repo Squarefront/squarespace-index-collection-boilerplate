@@ -15,41 +15,41 @@
 {.section collection}
     {.repeated section collections}
 
-        <section class="index-section {urlId|slugify} {typeName}">
+        <section id="{urlId|slugify}-section" class="index-section {urlId|slugify} {typeName}">
+            <div class="index-section-inner">
 
 
-            {###############################################################################
-                COLLECTION TYPE - EVENTS
-            ###############################################################################}
-            {.equal? typeName "events"}
+                {###############################################################################
+                    COLLECTION TYPE - EVENTS
+                ###############################################################################}
+                {.equal? typeName "events"}
 
-                <!-- Markup for Events -->
+                    <!-- Markup for Events -->
 
-            {.end}
-
-
-            {###############################################################################
-                COLLECTION TYPE - GALLERY
-            ###############################################################################}
-            {.equal? typeName "gallery"}
-
-                <!-- Markup for Gallery -->
-
-            {.end}
+                {.end}
 
 
-            {###############################################################################
-                COLLECTION TYPE - PAGE
-            ###############################################################################}
-            {.equal? typeName "page"}
+                {###############################################################################
+                    COLLECTION TYPE - GALLERY
+                ###############################################################################}
+                {.equal? typeName "gallery"}
 
-                <div class="index-section-inner wrapper expander" id="{urlId|slugify}-page" data-url-id="{urlId|slugify}">
+                    <!-- Markup for Gallery -->
+
+                {.end}
+
+
+                {###############################################################################
+                    COLLECTION TYPE - PAGE
+                ###############################################################################}
+                {.equal? typeName "page"}
+
                     {mainContent}
-                </div>
 
-            {.end}
+                {.end}
 
 
+            </div>
         </section>
 
     {.end}
