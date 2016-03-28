@@ -1,0 +1,66 @@
+{###############################################################################
+
+    SQUARESPACE CUSTOM COLLECTION TYPE - INDEX
+
+    This file, in conjunction with its `.conf` file, allows us to create
+    an Index collection.
+
+###############################################################################}
+
+
+
+{###############################################################################
+    INDEX COLLECTION ARRAY
+###############################################################################}
+{.section collection}
+    {.repeated section collections}
+
+        <section class="index-section {urlId|slugify} {typeName}">
+
+
+            {###############################################################################
+                COLLECTION TYPE - EVENTS
+            ###############################################################################}
+            {.equal? typeName "events"}
+
+                <!-- Markup for Events -->
+
+            {.end}
+
+
+            {###############################################################################
+                COLLECTION TYPE - GALLERY
+            ###############################################################################}
+            {.equal? typeName "gallery"}
+
+                <!-- Markup for Gallery -->
+
+            {.end}
+
+
+            {###############################################################################
+                COLLECTION TYPE - PAGE
+            ###############################################################################}
+            {.equal? typeName "page"}
+
+                <div class="index-section-inner wrapper expander" id="{urlId|slugify}-page" data-url-id="{urlId|slugify}">
+                    {mainContent}
+                </div>
+
+            {.end}
+
+
+        </section>
+
+    {.end}
+{.end}
+
+
+
+{###############################################################################
+
+<script>
+    console.log( "collection", {@|json-pretty} );
+</script>
+
+###############################################################################}
