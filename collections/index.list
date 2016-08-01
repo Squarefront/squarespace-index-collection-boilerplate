@@ -14,6 +14,8 @@
 ###############################################################################}
 {.section collection}
     {.repeated section collections}
+        {##  Hide section if page doesn't contain page content or collection items.  ##}
+        {.if mainContent || }
 
         <section id="{urlId|slugify}-section" class="index-section {urlId|slugify} {typeName}">
             <div class="index-section-inner">
@@ -52,6 +54,7 @@
             </div>
         </section>
 
+        {.end}
     {.end}
 {.end}
 
